@@ -10,10 +10,34 @@
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started</h2>
+            <h2>Digital Currency Prices</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                <table style="width:100%;">
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label1" runat="server" Font-Size="Large" Text="Label"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="Label2" runat="server" Font-Size="Large" Text="Label"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label3" runat="server" Font-Size="Large" Text="Label"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="Label4" runat="server" Font-Size="Large" Text="Label"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label5" runat="server" Font-Size="Large" Text="Label"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="Label6" runat="server" Font-Size="Large" Text="Label"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
             </p>
             <p>
                 <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
