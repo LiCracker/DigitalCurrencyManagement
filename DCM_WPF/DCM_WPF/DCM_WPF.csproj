@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InvestorBuyCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvestorBuyCurrency.Designer.cs">
+      <DependentUpon>InvestorBuyCurrency.cs</DependentUpon>
+    </Compile>
     <Compile Include="InvestorDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InvestorBuyCurrency.resx">
+      <DependentUpon>InvestorBuyCurrency.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InvestorDashboard.resx">
       <DependentUpon>InvestorDashboard.cs</DependentUpon>
     </EmbeddedResource>
