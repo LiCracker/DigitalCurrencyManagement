@@ -66,6 +66,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -199,7 +200,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(837, 42);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(745, 42);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // label7
@@ -209,7 +210,7 @@
             this.label7.Font = new System.Drawing.Font("Arial", 12F);
             this.label7.Location = new System.Drawing.Point(4, 1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(494, 40);
+            this.label7.Size = new System.Drawing.Size(439, 40);
             this.label7.TabIndex = 1;
             this.label7.Text = "Digital Currency Management System";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -219,9 +220,9 @@
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Arial", 12F);
-            this.label10.Location = new System.Drawing.Point(505, 1);
+            this.label10.Location = new System.Drawing.Point(450, 1);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(328, 40);
+            this.label10.Size = new System.Drawing.Size(291, 40);
             this.label10.TabIndex = 2;
             this.label10.Text = "Welcome back";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -565,11 +566,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Accounts Infomation";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(519, 387);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(0, 15);
+            this.label15.TabIndex = 8;
+            // 
             // InvestorDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 489);
+            this.ClientSize = new System.Drawing.Size(782, 489);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
@@ -589,6 +599,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -631,5 +642,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label BTC_USD_Label;
         private System.Windows.Forms.Label BTC_Label;
+        private System.Windows.Forms.Label label15;
     }
 }
