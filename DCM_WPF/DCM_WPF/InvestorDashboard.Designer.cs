@@ -93,7 +93,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(235, 218);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(275, 218);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label6
@@ -102,9 +102,9 @@
             this.label6.BackColor = System.Drawing.Color.GhostWhite;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Square721 BT", 10.2F);
-            this.label6.Location = new System.Drawing.Point(61, 144);
+            this.label6.Location = new System.Drawing.Point(71, 144);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 74);
+            this.label6.Size = new System.Drawing.Size(201, 74);
             this.label6.TabIndex = 5;
             this.label6.Text = "(Updating...)";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,7 +117,7 @@
             this.label5.Font = new System.Drawing.Font("Square721 BT", 10.2F);
             this.label5.Location = new System.Drawing.Point(3, 144);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 74);
+            this.label5.Size = new System.Drawing.Size(62, 74);
             this.label5.TabIndex = 4;
             this.label5.Text = "LTC";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,9 +128,9 @@
             this.label4.BackColor = System.Drawing.Color.Honeydew;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Square721 BT", 10.2F);
-            this.label4.Location = new System.Drawing.Point(61, 72);
+            this.label4.Location = new System.Drawing.Point(71, 72);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 72);
+            this.label4.Size = new System.Drawing.Size(201, 72);
             this.label4.TabIndex = 3;
             this.label4.Text = "(Updating...)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,7 +143,7 @@
             this.label3.Font = new System.Drawing.Font("Square721 BT", 10.2F);
             this.label3.Location = new System.Drawing.Point(3, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 72);
+            this.label3.Size = new System.Drawing.Size(62, 72);
             this.label3.TabIndex = 2;
             this.label3.Text = "ETH";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,9 +154,9 @@
             this.label2.BackColor = System.Drawing.Color.FloralWhite;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Square721 BT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(61, 0);
+            this.label2.Location = new System.Drawing.Point(71, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 72);
+            this.label2.Size = new System.Drawing.Size(201, 72);
             this.label2.TabIndex = 1;
             this.label2.Text = "(Updating...)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,7 +169,7 @@
             this.label1.Font = new System.Drawing.Font("Square721 BT", 10.2F);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 72);
+            this.label1.Size = new System.Drawing.Size(62, 72);
             this.label1.TabIndex = 0;
             this.label1.Text = "BTC";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -181,7 +181,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Location = new System.Drawing.Point(12, 387);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(241, 69);
+            this.button1.Size = new System.Drawing.Size(255, 69);
             this.button1.TabIndex = 2;
             this.button1.Text = "Buy Currency";
             this.button1.UseVisualStyleBackColor = false;
@@ -200,7 +200,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(745, 42);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(784, 42);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // label7
@@ -210,7 +210,7 @@
             this.label7.Font = new System.Drawing.Font("Arial", 12F);
             this.label7.Location = new System.Drawing.Point(4, 1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(439, 40);
+            this.label7.Size = new System.Drawing.Size(462, 40);
             this.label7.TabIndex = 1;
             this.label7.Text = "Digital Currency Management System";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -220,9 +220,9 @@
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Arial", 12F);
-            this.label10.Location = new System.Drawing.Point(450, 1);
+            this.label10.Location = new System.Drawing.Point(473, 1);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(291, 40);
+            this.label10.Size = new System.Drawing.Size(307, 40);
             this.label10.TabIndex = 2;
             this.label10.Text = "Welcome back";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -242,7 +242,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.95238F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.523809F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.523809F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(241, 277);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(281, 277);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label8
@@ -253,7 +253,7 @@
             this.label8.Font = new System.Drawing.Font("Arial", 9F);
             this.label8.Location = new System.Drawing.Point(3, 255);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(235, 17);
+            this.label8.Size = new System.Drawing.Size(275, 17);
             this.label8.TabIndex = 3;
             this.label8.Text = "Last Update: ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -266,7 +266,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.label9.Location = new System.Drawing.Point(3, 228);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(235, 17);
+            this.label9.Size = new System.Drawing.Size(275, 17);
             this.label9.TabIndex = 4;
             this.label9.Text = "(Refresh every 12 seconds)";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -539,10 +539,11 @@
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.Location = new System.Drawing.Point(273, 387);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(240, 69);
+            this.button2.Size = new System.Drawing.Size(255, 69);
             this.button2.TabIndex = 5;
             this.button2.Text = "Sell Currency";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox1
             // 
@@ -550,7 +551,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial", 9F);
             this.groupBox1.Location = new System.Drawing.Point(13, 61);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(253, 320);
+            this.groupBox1.Size = new System.Drawing.Size(293, 320);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Currencies Realtime USD Price";
@@ -559,9 +560,9 @@
             // 
             this.groupBox2.Controls.Add(this.tableLayoutPanel4);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 9F);
-            this.groupBox2.Location = new System.Drawing.Point(273, 62);
+            this.groupBox2.Location = new System.Drawing.Point(312, 61);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(485, 319);
+            this.groupBox2.Size = new System.Drawing.Size(485, 320);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Accounts Infomation";
@@ -578,7 +579,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 489);
+            this.ClientSize = new System.Drawing.Size(813, 473);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

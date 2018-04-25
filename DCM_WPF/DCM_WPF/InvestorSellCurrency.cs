@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace DCM_WPF
 {
-    public partial class InvestorBuyCurrency : Form
+    public partial class InvestorSellCurrency : Form
     {
         private string globalUsername;
         private string globalEmail;
@@ -33,14 +33,14 @@ namespace DCM_WPF
 
         private double volume = 0.0;
 
-        public InvestorBuyCurrency(string username, string email)
+        public InvestorSellCurrency(string username, string email)
         {
             InitializeComponent();
             globalUsername = username;
             globalEmail = email;
         }
 
-        private async void InvestorBuyCurrency_Load(object sender, EventArgs e)
+        private async void InvestorSellCurrency_Load(object sender, EventArgs e)
         {
             cb = new SqlConnectionStringBuilder();
             cb.DataSource = "dcm01.database.windows.net";
@@ -274,10 +274,24 @@ namespace DCM_WPF
 
         private void button_Lock_Click(object sender, EventArgs e)
         {
+            double max_volume = 0.0;
+            if (selectCurrency == "BTC")
+            {
+                max_volume = BTC_amount;
+            }
+            else if (selectCurrency == "ETH")
+            {
+                max_volume = ETH_amount;
+            }
+            else if (selectCurrency == "LTC")
+            {
+                max_volume = LTC_amount;
+            }
+
             bool isDouble = System.Double.TryParse(textBox1.Text, out volume);
             if (isDouble)
             {
-                if (volume > 0.0 && (volume * selectPrice) + 3 <= USD_amount)
+                if (volume > 0.0 && volume <= max_volume)
                 {
                     button_Lock.Enabled = false;
                     button_Unlock.Enabled = true;
@@ -287,7 +301,7 @@ namespace DCM_WPF
                 }
                 else
                 {
-                    MessageBox.Show("Buy volume should less than your USD account holdings plus service fee and can not be zero.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sell volume should less than your account holdings and can not be zero.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     textBox1.Text = "0.00";
                     volume = 0.00;
                 }
@@ -295,7 +309,7 @@ namespace DCM_WPF
             else
             {
                 MessageBox.Show("please input valid volume!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }   
+            }
         }
 
         private void button_Unlock_Click(object sender, EventArgs e)
@@ -309,15 +323,29 @@ namespace DCM_WPF
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            double max_volume = 0.0;
+            if (selectCurrency == "BTC")
+            {
+                max_volume = BTC_amount;
+            }
+            else if (selectCurrency == "ETH")
+            {
+                max_volume = ETH_amount;
+            }
+            else if (selectCurrency == "LTC")
+            {
+                max_volume = LTC_amount;
+            }
+
             if (System.Double.TryParse(textBox1.Text, out volume))
             {
-                if (volume >= 0.0 && (volume * selectPrice) + 3 < USD_amount)
+                if (volume >= 0.0 && volume <= max_volume)
                 {
                     textBox3.Text = "$ " + string.Format("{0:N2}", volume * selectPrice);
                 }
                 else
                 {
-                    MessageBox.Show("Buy volume should less than your USD account holdings plus service fee.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sell volume should less than your current volume", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     textBox1.Text = "0.00";
                     volume = 0.00;
                 }
@@ -349,30 +377,30 @@ namespace DCM_WPF
 
             if (selectCurrency == "BTC")
             {
-                update_currency_volume = BTC_amount + volume;
-                update_USD_volume = USD_amount - volume * selectPrice - 3;
+                update_currency_volume = BTC_amount - volume;
+                update_USD_volume = USD_amount + volume * selectPrice;
             }
             else if (selectCurrency == "ETH")
             {
-                update_currency_volume = ETH_amount + volume;
-                update_USD_volume = USD_amount - volume * selectPrice - 3;
+                update_currency_volume = ETH_amount - volume;
+                update_USD_volume = USD_amount + volume * selectPrice;
             }
             else if (selectCurrency == "LTC")
             {
-                update_currency_volume = LTC_amount + volume;
-                update_USD_volume = USD_amount - volume * selectPrice - 3;
+                update_currency_volume = LTC_amount - volume;
+                update_USD_volume = USD_amount + volume * selectPrice;
             }
 
-            if (update_USD_volume < 0)
+            if (update_currency_volume < 0)
             {
-                update_USD_volume = 0;
+                update_currency_volume = 0;
             }
 
             update_USD_volume = Math.Round(update_USD_volume, 2);
 
             string updateCurrencyTxt = Query_update_Currency();
             string updateUSDTxt = Query_update_USD();
-            
+
             using (SqlConnection connection = new SqlConnection(cb.ConnectionString))
             {
                 SqlCommand updateCurrencyCommand = new SqlCommand(updateCurrencyTxt, connection);
@@ -391,7 +419,7 @@ namespace DCM_WPF
                     int updateUSDAffected = updateUSDCommand.ExecuteNonQuery();
                     if (updatecurrencyAffected == 1 && updateUSDAffected == 1)
                     {
-                        MessageBox.Show("Thank you, you successfully buy "+ volume.ToString() + " " + selectCurrency + " for " + "$ " + string.Format("{0:N2}", volume * selectPrice), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Thank you, you successfully sell " + volume.ToString() + " " + selectCurrency + " for " + "$ " + string.Format("{0:N2}", volume * selectPrice), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     refresh_account_info(globalRootObject);
@@ -421,7 +449,7 @@ namespace DCM_WPF
             return @"UPDATE Account SET Balance = @BalanceUSD FROM Account WHERE Email = @Email AND Currency =  'USD'";
         }
 
-        private void InvestorBuyCurrency_FormClosing(object sender, FormClosingEventArgs e)
+        private void InvestorSellCurrency_FormClosing(object sender, FormClosingEventArgs e)
         {
             InvestorDashboard ID = new InvestorDashboard(globalUsername, globalEmail);
             ID.Show();
