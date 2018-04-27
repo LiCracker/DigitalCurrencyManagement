@@ -67,6 +67,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -177,11 +179,11 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Arial", 9F);
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(12, 387);
+            this.button1.Font = new System.Drawing.Font("Arial", 10F);
+            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.Location = new System.Drawing.Point(13, 387);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 69);
+            this.button1.Size = new System.Drawing.Size(294, 69);
             this.button1.TabIndex = 2;
             this.button1.Text = "Buy Currency";
             this.button1.UseVisualStyleBackColor = false;
@@ -535,11 +537,11 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Font = new System.Drawing.Font("Arial", 9F);
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(273, 387);
+            this.button2.Font = new System.Drawing.Font("Arial", 10F);
+            this.button2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.button2.Location = new System.Drawing.Point(312, 387);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(255, 69);
+            this.button2.Size = new System.Drawing.Size(294, 69);
             this.button2.TabIndex = 5;
             this.button2.Text = "Sell Currency";
             this.button2.UseVisualStyleBackColor = false;
@@ -575,11 +577,39 @@
             this.label15.Size = new System.Drawing.Size(0, 15);
             this.label15.TabIndex = 8;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Font = new System.Drawing.Font("Arial", 10F);
+            this.button3.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button3.Location = new System.Drawing.Point(13, 473);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(294, 68);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "US Dollar Deposit / Withdraw";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button4.Font = new System.Drawing.Font("Arial", 10F);
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(312, 473);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(294, 68);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "View Recent Activity";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // InvestorDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 473);
+            this.ClientSize = new System.Drawing.Size(807, 568);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -644,5 +674,7 @@
         private System.Windows.Forms.Label BTC_USD_Label;
         private System.Windows.Forms.Label BTC_Label;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

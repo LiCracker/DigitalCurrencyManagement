@@ -374,21 +374,24 @@ namespace DCM_WPF
         {
             double update_currency_volume = 0.00;
             double update_USD_volume = USD_amount;
+            double cost = Math.Round(volume * selectPrice, 2);
+            DateTime dateTimeVariable = DateTime.Now;
+            string type = "sell";
 
             if (selectCurrency == "BTC")
             {
                 update_currency_volume = BTC_amount - volume;
-                update_USD_volume = USD_amount + volume * selectPrice;
+                update_USD_volume = USD_amount + cost;
             }
             else if (selectCurrency == "ETH")
             {
                 update_currency_volume = ETH_amount - volume;
-                update_USD_volume = USD_amount + volume * selectPrice;
+                update_USD_volume = USD_amount + cost;
             }
             else if (selectCurrency == "LTC")
             {
                 update_currency_volume = LTC_amount - volume;
-                update_USD_volume = USD_amount + volume * selectPrice;
+                update_USD_volume = USD_amount + cost;
             }
 
             if (update_currency_volume < 0)
@@ -400,6 +403,7 @@ namespace DCM_WPF
 
             string updateCurrencyTxt = Query_update_Currency();
             string updateUSDTxt = Query_update_USD();
+            string insertTransantionTxt = Query_insert_transaction();
 
             using (SqlConnection connection = new SqlConnection(cb.ConnectionString))
             {
@@ -412,14 +416,25 @@ namespace DCM_WPF
                 updateUSDCommand.Parameters.AddWithValue("@BalanceUSD", update_USD_volume);
                 updateUSDCommand.Parameters.AddWithValue("@Email", globalEmail);
 
+                SqlCommand insertTransactionCommand = new SqlCommand(insertTransantionTxt, connection);
+                insertTransactionCommand.Parameters.AddWithValue("@Email", globalEmail);
+                insertTransactionCommand.Parameters.AddWithValue("@Currency", selectCurrency);
+                insertTransactionCommand.Parameters.AddWithValue("@Volume", volume);
+                insertTransactionCommand.Parameters.AddWithValue("@Price", selectPrice);
+                insertTransactionCommand.Parameters.AddWithValue("@Cost", cost);
+                insertTransactionCommand.Parameters.AddWithValue("@RecordDatetime", dateTimeVariable);
+                insertTransactionCommand.Parameters.AddWithValue("@RecordType", type);
+
                 try
                 {
                     connection.Open();
                     int updatecurrencyAffected = updateCurrencyCommand.ExecuteNonQuery();
                     int updateUSDAffected = updateUSDCommand.ExecuteNonQuery();
-                    if (updatecurrencyAffected == 1 && updateUSDAffected == 1)
+                    int insertTransactionAffected = insertTransactionCommand.ExecuteNonQuery();
+
+                    if (updatecurrencyAffected == 1 && updateUSDAffected == 1 && insertTransactionAffected == 1)
                     {
-                        MessageBox.Show("Thank you, you successfully sell " + volume.ToString() + " " + selectCurrency + " for " + "$ " + string.Format("{0:N2}", volume * selectPrice), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Thank you, you successfully sell " + volume.ToString() + " " + selectCurrency + " for " + "$ " + string.Format("{0:N2}", cost), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     refresh_account_info(globalRootObject);
@@ -447,6 +462,11 @@ namespace DCM_WPF
         static string Query_update_USD()
         {
             return @"UPDATE Account SET Balance = @BalanceUSD FROM Account WHERE Email = @Email AND Currency =  'USD'";
+        }
+
+        static string Query_insert_transaction()
+        {
+            return @"INSERT INTO Transactions (Email, Currency, Volume, Price, Cost, RecordDatetime, RecordType) VALUES (@Email, @Currency, @Volume, @Price, @Cost, @RecordDatetime, @RecordType)";
         }
 
         private void InvestorSellCurrency_FormClosing(object sender, FormClosingEventArgs e)

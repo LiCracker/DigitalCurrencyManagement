@@ -50,6 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DCMdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DCMdbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DCMdbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DCMdbDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InvestorBuyCurrency.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,11 +72,23 @@
     <Compile Include="InvestorDashboard.Designer.cs">
       <DependentUpon>InvestorDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvestorRecentActivities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvestorRecentActivities.Designer.cs">
+      <DependentUpon>InvestorRecentActivities.cs</DependentUpon>
+    </Compile>
     <Compile Include="InvestorSellCurrency.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InvestorSellCurrency.Designer.cs">
       <DependentUpon>InvestorSellCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvestorUSDManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvestorUSDManager.Designer.cs">
+      <DependentUpon>InvestorUSDManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -83,8 +105,14 @@
     <EmbeddedResource Include="InvestorDashboard.resx">
       <DependentUpon>InvestorDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InvestorRecentActivities.resx">
+      <DependentUpon>InvestorRecentActivities.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InvestorSellCurrency.resx">
       <DependentUpon>InvestorSellCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvestorUSDManager.resx">
+      <DependentUpon>InvestorUSDManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -98,6 +126,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DCMdbDataSet.xsc">
+      <DependentUpon>DCMdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DCMdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DCMdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DCMdbDataSet.xss">
+      <DependentUpon>DCMdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DCMdbDataSet1.xsc">
+      <DependentUpon>DCMdbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DCMdbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DCMdbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DCMdbDataSet1.xss">
+      <DependentUpon>DCMdbDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

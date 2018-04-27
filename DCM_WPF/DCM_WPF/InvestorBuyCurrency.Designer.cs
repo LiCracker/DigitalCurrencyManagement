@@ -75,6 +75,7 @@
             this.groupBox_confirm = new System.Windows.Forms.GroupBox();
             this.button_Confirm_Purchase = new System.Windows.Forms.Button();
             this.timerRefreshPrices = new System.Windows.Forms.Timer(this.components);
+            this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox_selected_currency.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -669,12 +670,13 @@
             // 
             // groupBox_confirm
             // 
+            this.groupBox_confirm.Controls.Add(this.label11);
             this.groupBox_confirm.Controls.Add(this.button_Confirm_Purchase);
             this.groupBox_confirm.Enabled = false;
             this.groupBox_confirm.Font = new System.Drawing.Font("Arial", 9F);
             this.groupBox_confirm.Location = new System.Drawing.Point(12, 484);
             this.groupBox_confirm.Name = "groupBox_confirm";
-            this.groupBox_confirm.Size = new System.Drawing.Size(837, 78);
+            this.groupBox_confirm.Size = new System.Drawing.Size(837, 98);
             this.groupBox_confirm.TabIndex = 9;
             this.groupBox_confirm.TabStop = false;
             this.groupBox_confirm.Text = "Confirm";
@@ -684,9 +686,9 @@
             this.button_Confirm_Purchase.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button_Confirm_Purchase.Font = new System.Drawing.Font("Arial", 10.8F);
             this.button_Confirm_Purchase.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_Confirm_Purchase.Location = new System.Drawing.Point(8, 25);
+            this.button_Confirm_Purchase.Location = new System.Drawing.Point(8, 41);
             this.button_Confirm_Purchase.Name = "button_Confirm_Purchase";
-            this.button_Confirm_Purchase.Size = new System.Drawing.Size(820, 47);
+            this.button_Confirm_Purchase.Size = new System.Drawing.Size(820, 51);
             this.button_Confirm_Purchase.TabIndex = 0;
             this.button_Confirm_Purchase.Text = "Confirm Buy";
             this.button_Confirm_Purchase.UseVisualStyleBackColor = false;
@@ -696,11 +698,24 @@
             // 
             this.timerRefreshPrices.Tick += new System.EventHandler(this.timerRefreshPrices_Tick);
             // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Maroon;
+            this.label11.Location = new System.Drawing.Point(5, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(262, 17);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "($3.00 service fee for each transection)";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // InvestorBuyCurrency
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 574);
+            this.ClientSize = new System.Drawing.Size(864, 594);
             this.Controls.Add(this.groupBox_confirm);
             this.Controls.Add(this.groupBox_buy);
             this.Controls.Add(this.groupBox_accounts);
@@ -734,6 +749,7 @@
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.groupBox_confirm.ResumeLayout(false);
+            this.groupBox_confirm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -786,5 +802,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label11;
     }
 }
