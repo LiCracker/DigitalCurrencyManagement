@@ -50,15 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.Designer.cs">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="DCMdbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DCMdbDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DCMdbDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DCMdbDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="InvestorBuyCurrency.cs">
       <SubType>Form</SubType>
@@ -99,6 +100,9 @@
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminLogin.resx">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InvestorBuyCurrency.resx">
       <DependentUpon>InvestorBuyCurrency.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,17 +140,6 @@
     </None>
     <None Include="DCMdbDataSet.xss">
       <DependentUpon>DCMdbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DCMdbDataSet1.xsc">
-      <DependentUpon>DCMdbDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DCMdbDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DCMdbDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DCMdbDataSet1.xss">
-      <DependentUpon>DCMdbDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

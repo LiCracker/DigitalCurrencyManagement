@@ -618,6 +618,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "InvestorDashboard";
             this.Text = "InvestorDashboard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InvestorDashboard_FormClosing);
             this.Load += new System.EventHandler(this.InvestorDashboard_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
