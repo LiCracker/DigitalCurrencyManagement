@@ -81,8 +81,8 @@ namespace DCM_WPF
                     {
                         linkedBank = reader_bank[0].ToString();
                         linkedAccount = reader_bank[1].ToString();
-                        label6.Text = "(You linked: " + linkedBank + ", Account: " + linkedAccount + ")";
-                        label8.Text = "(You linked: " + linkedBank + ", Account: " + linkedAccount + ")";
+                        label6.Text = linkedBank + ", No: " + linkedAccount;
+                        label8.Text = linkedBank + ", No: " + linkedAccount;
                     }
                     reader_bank.Close();
 
