@@ -380,36 +380,45 @@ namespace DCM_WPF
             string updateCurrencyTxt = Query_update_Currency();
             string updateUSDTxt = Query_update_USD();
             string insertTransantionTxt = Query_insert_transaction();
-            
+            SqlTransaction transaction = null;
+
             using (SqlConnection connection = new SqlConnection(cb.ConnectionString))
             {
-                SqlCommand updateCurrencyCommand = new SqlCommand(updateCurrencyTxt, connection);
-                updateCurrencyCommand.Parameters.AddWithValue("@BalanceCurrency", update_currency_volume);
-                updateCurrencyCommand.Parameters.AddWithValue("@Email", globalEmail);
-                updateCurrencyCommand.Parameters.AddWithValue("@Currency", selectCurrency);
-
-                SqlCommand updateUSDCommand = new SqlCommand(updateUSDTxt, connection);
-                updateUSDCommand.Parameters.AddWithValue("@BalanceUSD", update_USD_volume);
-                updateUSDCommand.Parameters.AddWithValue("@Email", globalEmail);
-
-                SqlCommand insertTransactionCommand = new SqlCommand(insertTransantionTxt, connection);
-                insertTransactionCommand.Parameters.AddWithValue("@Email", globalEmail);
-                insertTransactionCommand.Parameters.AddWithValue("@Currency", selectCurrency);
-                insertTransactionCommand.Parameters.AddWithValue("@Volume", volume);
-                insertTransactionCommand.Parameters.AddWithValue("@Price", selectPrice);
-                insertTransactionCommand.Parameters.AddWithValue("@Cost", cost);
-                insertTransactionCommand.Parameters.AddWithValue("@RecordDatetime", dateTimeVariable);
-                insertTransactionCommand.Parameters.AddWithValue("@RecordType", type);
-
                 try
                 {
                     connection.Open();
+                    transaction = connection.BeginTransaction();
+
+                    SqlCommand updateCurrencyCommand = new SqlCommand(updateCurrencyTxt, connection);
+                    updateCurrencyCommand.Parameters.AddWithValue("@BalanceCurrency", update_currency_volume);
+                    updateCurrencyCommand.Parameters.AddWithValue("@Email", globalEmail);
+                    updateCurrencyCommand.Parameters.AddWithValue("@Currency", selectCurrency);
+
+                    updateCurrencyCommand.Transaction = transaction;
                     int updatecurrencyAffected = updateCurrencyCommand.ExecuteNonQuery();
+
+                    SqlCommand updateUSDCommand = new SqlCommand(updateUSDTxt, connection);
+                    updateUSDCommand.Parameters.AddWithValue("@BalanceUSD", update_USD_volume);
+                    updateUSDCommand.Parameters.AddWithValue("@Email", globalEmail);
+
+                    updateUSDCommand.Transaction = transaction;
                     int updateUSDAffected = updateUSDCommand.ExecuteNonQuery();
+
+                    SqlCommand insertTransactionCommand = new SqlCommand(insertTransantionTxt, connection);
+                    insertTransactionCommand.Parameters.AddWithValue("@Email", globalEmail);
+                    insertTransactionCommand.Parameters.AddWithValue("@Currency", selectCurrency);
+                    insertTransactionCommand.Parameters.AddWithValue("@Volume", volume);
+                    insertTransactionCommand.Parameters.AddWithValue("@Price", selectPrice);
+                    insertTransactionCommand.Parameters.AddWithValue("@Cost", cost);
+                    insertTransactionCommand.Parameters.AddWithValue("@RecordDatetime", dateTimeVariable);
+                    insertTransactionCommand.Parameters.AddWithValue("@RecordType", type);
+
+                    insertTransactionCommand.Transaction = transaction;
                     int insertTransactionAffected = insertTransactionCommand.ExecuteNonQuery();
 
                     if (updatecurrencyAffected == 1 && updateUSDAffected == 1 && insertTransactionAffected == 1)
                     {
+                        transaction.Commit();
                         MessageBox.Show("Thank you, you successfully buy "+ volume.ToString() + " " + selectCurrency + " for " + "$ " + string.Format("{0:N2}", cost), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -418,6 +427,7 @@ namespace DCM_WPF
                 }
                 catch (Exception ex)
                 {
+                    transaction.Rollback();
                     Console.WriteLine(ex.Message);
                     MessageBox.Show(ex.Message);
                     return false;
