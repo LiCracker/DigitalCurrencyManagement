@@ -165,6 +165,10 @@ namespace DCM_WPF
                 findAddressByEmail(textBox_by_email.Text);
                 textBox_by_username.Text = "";
             }
+            else
+            {
+                MessageBox.Show("Sorry, cannot find receiver, please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void findAddressByEmail(string email)
@@ -226,6 +230,10 @@ namespace DCM_WPF
                 findAddressByUsername(textBox_by_username.Text);
                 textBox_by_email.Text = "";
             }
+            else
+            {
+                MessageBox.Show("Sorry, cannot find receiver, please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void findAddressByUsername(string username)
@@ -286,6 +294,11 @@ namespace DCM_WPF
             textBox_Receiver_Address.Text = "";
         }
 
+        private void clean_initial()
+        {
+            textBox_Amount.Text = "";
+        }
+
         private void InvestorTransfer_FormClosing(object sender, FormClosingEventArgs e)
         {
             InvestorDashboard ID = new InvestorDashboard(globalUsername, globalEmail, prior);
@@ -294,7 +307,85 @@ namespace DCM_WPF
 
         private void button_make_transfer_Click(object sender, EventArgs e)
         {
+            double transfer_amount = Convert.ToDouble(textBox_Amount.Text);
+            if (textBox_Amount.Text.Equals("") || transfer_amount == 0)
+            {
+                MessageBox.Show("Sorry, cannot transfer zero amount.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (selectedCurrency == "BTC")
+            {
+                if (transfer_amount <= BTC_MAX)
+                {
+                    make_transfer("BTC", transfer_amount);
+                }
+                else
+                {
+                    MessageBox.Show("Sorry, cannot transfer more than the amount in your account.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if (selectedCurrency == "ETH")
+            {
+                if (transfer_amount <= ETH_MAX)
+                {
+                    make_transfer("ETH", transfer_amount);
+                }
+                else
+                {
+                    MessageBox.Show("Sorry, cannot transfer more than the amount in your account.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if (selectedCurrency == "LTC")
+            {
+                if (transfer_amount <= LTC_MAX)
+                {
+                    make_transfer("LTC", transfer_amount);
+                }
+                else
+                {
+                    MessageBox.Show("Sorry, cannot transfer more than the amount in your account.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
 
+        private void make_transfer(string currency, double amount)
+        {
+            string sender = textBox_Sender_Address.Text;
+            string receiver = textBox_Receiver_Address.Text;
+            DateTime dateTimeVariable = DateTime.Now;
+
+            using (SqlConnection connection = new SqlConnection(cb.ConnectionString))
+            {
+                SqlCommand make_transfer_command = new SqlCommand("update_transfer", connection);
+                make_transfer_command.CommandType = CommandType.StoredProcedure;
+
+                make_transfer_command.Parameters.AddWithValue("@Sender", sender);
+                make_transfer_command.Parameters.AddWithValue("@Receiver", receiver);
+                make_transfer_command.Parameters.AddWithValue("@Currency", currency);
+                make_transfer_command.Parameters.AddWithValue("@Amount",amount);
+                make_transfer_command.Parameters.AddWithValue("@Recorddatetime", dateTimeVariable);
+
+                try
+                {
+                    connection.Open();
+                    int make_transfer_Affected = make_transfer_command.ExecuteNonQuery();
+
+                    if (make_transfer_Affected == 3)
+                    {
+                        MessageBox.Show("Transfer Success. You success transfer " + currency + " : " + amount.ToString() + " To " + textBox_receiver_username.Text + " [" + textBox_receiver_email.Text + " , " + textBox_Receiver_Address.Text + "].", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                    clean_initial();
+                    refresh_account_info();
+                }
+            }
         }
     }
 }
