@@ -69,12 +69,18 @@
             this.label15 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -181,9 +187,9 @@
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Font = new System.Drawing.Font("Arial", 10F);
             this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Location = new System.Drawing.Point(13, 387);
+            this.button1.Location = new System.Drawing.Point(6, 24);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(294, 69);
+            this.button1.Size = new System.Drawing.Size(281, 69);
             this.button1.TabIndex = 2;
             this.button1.Text = "Buy Currency";
             this.button1.UseVisualStyleBackColor = false;
@@ -202,7 +208,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(784, 42);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(884, 42);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // label7
@@ -212,7 +218,7 @@
             this.label7.Font = new System.Drawing.Font("Arial", 12F);
             this.label7.Location = new System.Drawing.Point(4, 1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(462, 40);
+            this.label7.Size = new System.Drawing.Size(522, 40);
             this.label7.TabIndex = 1;
             this.label7.Text = "Digital Currency Management System";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -222,9 +228,9 @@
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Arial", 12F);
-            this.label10.Location = new System.Drawing.Point(473, 1);
+            this.label10.Location = new System.Drawing.Point(533, 1);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(307, 40);
+            this.label10.Size = new System.Drawing.Size(347, 40);
             this.label10.TabIndex = 2;
             this.label10.Text = "Welcome back";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -310,7 +316,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18215F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18215F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18033F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(473, 277);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(568, 277);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // label28
@@ -321,7 +327,7 @@
             this.label28.Font = new System.Drawing.Font("Arial", 10F);
             this.label28.Location = new System.Drawing.Point(3, 225);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(88, 52);
+            this.label28.Size = new System.Drawing.Size(107, 52);
             this.label28.TabIndex = 17;
             this.label28.Text = "TOTAL";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -331,9 +337,9 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label27.Location = new System.Drawing.Point(97, 225);
+            this.label27.Location = new System.Drawing.Point(116, 225);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(206, 52);
+            this.label27.Size = new System.Drawing.Size(249, 52);
             this.label27.TabIndex = 16;
             this.label27.Text = "-";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -344,9 +350,9 @@
             this.Total_USD_Label.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Total_USD_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Total_USD_Label.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total_USD_Label.Location = new System.Drawing.Point(309, 225);
+            this.Total_USD_Label.Location = new System.Drawing.Point(371, 225);
             this.Total_USD_Label.Name = "Total_USD_Label";
-            this.Total_USD_Label.Size = new System.Drawing.Size(161, 52);
+            this.Total_USD_Label.Size = new System.Drawing.Size(194, 52);
             this.Total_USD_Label.TabIndex = 15;
             this.Total_USD_Label.Text = "0.00";
             this.Total_USD_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,9 +362,9 @@
             this.USD_USD_Label.AutoSize = true;
             this.USD_USD_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.USD_USD_Label.Font = new System.Drawing.Font("Arial", 10F);
-            this.USD_USD_Label.Location = new System.Drawing.Point(309, 175);
+            this.USD_USD_Label.Location = new System.Drawing.Point(371, 175);
             this.USD_USD_Label.Name = "USD_USD_Label";
-            this.USD_USD_Label.Size = new System.Drawing.Size(161, 50);
+            this.USD_USD_Label.Size = new System.Drawing.Size(194, 50);
             this.USD_USD_Label.TabIndex = 14;
             this.USD_USD_Label.Text = "0.00";
             this.USD_USD_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -368,9 +374,9 @@
             this.USD_Label.AutoSize = true;
             this.USD_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.USD_Label.Font = new System.Drawing.Font("Arial", 10F);
-            this.USD_Label.Location = new System.Drawing.Point(97, 175);
+            this.USD_Label.Location = new System.Drawing.Point(116, 175);
             this.USD_Label.Name = "USD_Label";
-            this.USD_Label.Size = new System.Drawing.Size(206, 50);
+            this.USD_Label.Size = new System.Drawing.Size(249, 50);
             this.USD_Label.TabIndex = 13;
             this.USD_Label.Text = "0.00";
             this.USD_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -382,7 +388,7 @@
             this.label23.Font = new System.Drawing.Font("Arial", 10F);
             this.label23.Location = new System.Drawing.Point(3, 175);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(88, 50);
+            this.label23.Size = new System.Drawing.Size(107, 50);
             this.label23.TabIndex = 12;
             this.label23.Text = "USD";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -392,9 +398,9 @@
             this.LTC_USD_Label.AutoSize = true;
             this.LTC_USD_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LTC_USD_Label.Font = new System.Drawing.Font("Arial", 10F);
-            this.LTC_USD_Label.Location = new System.Drawing.Point(309, 125);
+            this.LTC_USD_Label.Location = new System.Drawing.Point(371, 125);
             this.LTC_USD_Label.Name = "LTC_USD_Label";
-            this.LTC_USD_Label.Size = new System.Drawing.Size(161, 50);
+            this.LTC_USD_Label.Size = new System.Drawing.Size(194, 50);
             this.LTC_USD_Label.TabIndex = 11;
             this.LTC_USD_Label.Text = "0.00";
             this.LTC_USD_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -404,9 +410,9 @@
             this.LTC_Label.AutoSize = true;
             this.LTC_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LTC_Label.Font = new System.Drawing.Font("Arial", 10F);
-            this.LTC_Label.Location = new System.Drawing.Point(97, 125);
+            this.LTC_Label.Location = new System.Drawing.Point(116, 125);
             this.LTC_Label.Name = "LTC_Label";
-            this.LTC_Label.Size = new System.Drawing.Size(206, 50);
+            this.LTC_Label.Size = new System.Drawing.Size(249, 50);
             this.LTC_Label.TabIndex = 10;
             this.LTC_Label.Text = "0.00";
             this.LTC_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -418,7 +424,7 @@
             this.label20.Font = new System.Drawing.Font("Arial", 10F);
             this.label20.Location = new System.Drawing.Point(3, 125);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(88, 50);
+            this.label20.Size = new System.Drawing.Size(107, 50);
             this.label20.TabIndex = 9;
             this.label20.Text = "LTC";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -428,9 +434,9 @@
             this.ETH_USD_Label.AutoSize = true;
             this.ETH_USD_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ETH_USD_Label.Font = new System.Drawing.Font("Arial", 10F);
-            this.ETH_USD_Label.Location = new System.Drawing.Point(309, 75);
+            this.ETH_USD_Label.Location = new System.Drawing.Point(371, 75);
             this.ETH_USD_Label.Name = "ETH_USD_Label";
-            this.ETH_USD_Label.Size = new System.Drawing.Size(161, 50);
+            this.ETH_USD_Label.Size = new System.Drawing.Size(194, 50);
             this.ETH_USD_Label.TabIndex = 8;
             this.ETH_USD_Label.Text = "0.00";
             this.ETH_USD_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -440,9 +446,9 @@
             this.ETH_Label.AutoSize = true;
             this.ETH_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ETH_Label.Font = new System.Drawing.Font("Arial", 10F);
-            this.ETH_Label.Location = new System.Drawing.Point(97, 75);
+            this.ETH_Label.Location = new System.Drawing.Point(116, 75);
             this.ETH_Label.Name = "ETH_Label";
-            this.ETH_Label.Size = new System.Drawing.Size(206, 50);
+            this.ETH_Label.Size = new System.Drawing.Size(249, 50);
             this.ETH_Label.TabIndex = 7;
             this.ETH_Label.Text = "0.00";
             this.ETH_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -454,7 +460,7 @@
             this.label17.Font = new System.Drawing.Font("Arial", 10F);
             this.label17.Location = new System.Drawing.Point(3, 75);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(88, 50);
+            this.label17.Size = new System.Drawing.Size(107, 50);
             this.label17.TabIndex = 6;
             this.label17.Text = "ETH";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -464,9 +470,9 @@
             this.BTC_USD_Label.AutoSize = true;
             this.BTC_USD_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BTC_USD_Label.Font = new System.Drawing.Font("Arial", 10F);
-            this.BTC_USD_Label.Location = new System.Drawing.Point(309, 25);
+            this.BTC_USD_Label.Location = new System.Drawing.Point(371, 25);
             this.BTC_USD_Label.Name = "BTC_USD_Label";
-            this.BTC_USD_Label.Size = new System.Drawing.Size(161, 50);
+            this.BTC_USD_Label.Size = new System.Drawing.Size(194, 50);
             this.BTC_USD_Label.TabIndex = 5;
             this.BTC_USD_Label.Text = "0.00";
             this.BTC_USD_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -476,9 +482,9 @@
             this.BTC_Label.AutoSize = true;
             this.BTC_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BTC_Label.Font = new System.Drawing.Font("Arial", 10F);
-            this.BTC_Label.Location = new System.Drawing.Point(97, 25);
+            this.BTC_Label.Location = new System.Drawing.Point(116, 25);
             this.BTC_Label.Name = "BTC_Label";
-            this.BTC_Label.Size = new System.Drawing.Size(206, 50);
+            this.BTC_Label.Size = new System.Drawing.Size(249, 50);
             this.BTC_Label.TabIndex = 4;
             this.BTC_Label.Text = "0.00";
             this.BTC_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -490,7 +496,7 @@
             this.label14.Font = new System.Drawing.Font("Arial", 10F);
             this.label14.Location = new System.Drawing.Point(3, 25);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(88, 50);
+            this.label14.Size = new System.Drawing.Size(107, 50);
             this.label14.TabIndex = 3;
             this.label14.Text = "BTC";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -501,9 +507,9 @@
             this.label13.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic);
-            this.label13.Location = new System.Drawing.Point(309, 0);
+            this.label13.Location = new System.Drawing.Point(371, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(161, 25);
+            this.label13.Size = new System.Drawing.Size(194, 25);
             this.label13.TabIndex = 2;
             this.label13.Text = "Equivalent USD";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -514,9 +520,9 @@
             this.label12.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic);
-            this.label12.Location = new System.Drawing.Point(97, 0);
+            this.label12.Location = new System.Drawing.Point(116, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(206, 25);
+            this.label12.Size = new System.Drawing.Size(249, 25);
             this.label12.TabIndex = 1;
             this.label12.Text = "Holding Amount";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -529,7 +535,7 @@
             this.label11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic);
             this.label11.Location = new System.Drawing.Point(3, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 25);
+            this.label11.Size = new System.Drawing.Size(107, 25);
             this.label11.TabIndex = 0;
             this.label11.Text = "Account";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -539,9 +545,9 @@
             this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button2.Font = new System.Drawing.Font("Arial", 10F);
             this.button2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.button2.Location = new System.Drawing.Point(312, 387);
+            this.button2.Location = new System.Drawing.Point(6, 99);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(294, 69);
+            this.button2.Size = new System.Drawing.Size(281, 69);
             this.button2.TabIndex = 5;
             this.button2.Text = "Sell Currency";
             this.button2.UseVisualStyleBackColor = false;
@@ -564,7 +570,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Arial", 9F);
             this.groupBox2.Location = new System.Drawing.Point(312, 61);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(485, 320);
+            this.groupBox2.Size = new System.Drawing.Size(585, 320);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Accounts Infomation";
@@ -582,9 +588,9 @@
             this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button3.Font = new System.Drawing.Font("Arial", 10F);
             this.button3.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.button3.Location = new System.Drawing.Point(13, 473);
+            this.button3.Location = new System.Drawing.Point(6, 25);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(294, 68);
+            this.button3.Size = new System.Drawing.Size(280, 68);
             this.button3.TabIndex = 9;
             this.button3.Text = "US Dollar Deposit / Withdraw";
             this.button3.UseVisualStyleBackColor = false;
@@ -595,27 +601,78 @@
             this.button4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button4.Font = new System.Drawing.Font("Arial", 10F);
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(312, 473);
+            this.button4.Location = new System.Drawing.Point(5, 99);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(294, 68);
+            this.button4.Size = new System.Drawing.Size(281, 68);
             this.button4.TabIndex = 10;
             this.button4.Text = "View Recent Activity";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button5.Font = new System.Drawing.Font("Arial", 10F);
+            this.button5.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button5.Location = new System.Drawing.Point(292, 25);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(281, 68);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "Account Management";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Font = new System.Drawing.Font("Arial", 9F);
+            this.groupBox3.Location = new System.Drawing.Point(13, 387);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(293, 186);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Buy/Sell Currency";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Font = new System.Drawing.Font("Arial", 9F);
+            this.groupBox4.Location = new System.Drawing.Point(313, 387);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(584, 186);
+            this.groupBox4.TabIndex = 13;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Account Operation";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button6.Font = new System.Drawing.Font("Arial", 10F);
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(292, 99);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(281, 68);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "Logout";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // InvestorDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 568);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(912, 593);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "InvestorDashboard";
             this.Text = "InvestorDashboard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InvestorDashboard_FormClosing);
@@ -630,6 +687,8 @@
             this.tableLayoutPanel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -677,5 +736,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button6;
     }
 }

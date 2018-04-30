@@ -98,9 +98,9 @@ namespace DCM_WPF
                     else
                     {
                         MessageBox.Show("Login complete! Welcome back, " + textBox1.Text, "Login Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //InvestorDashboard ID = new InvestorDashboard(textBox1.Text, result);
-                        //ID.Show();
-                        //this.Hide();
+                        AdminDashboard AD = new AdminDashboard(this);
+                        AD.Show();
+                        this.Hide();
                     }
                 }
             }

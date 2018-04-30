@@ -33,11 +33,15 @@ namespace DCM_WPF
 
         private double volume = 0.0;
 
-        public InvestorBuyCurrency(string username, string email)
+        Login prior;
+
+        public InvestorBuyCurrency(string username, string email, Login L)
         {
             InitializeComponent();
             globalUsername = username;
             globalEmail = email;
+
+            prior = L;
         }
 
         private async void InvestorBuyCurrency_Load(object sender, EventArgs e)
@@ -443,7 +447,7 @@ namespace DCM_WPF
 
         private void InvestorBuyCurrency_FormClosing(object sender, FormClosingEventArgs e)
         {
-            InvestorDashboard ID = new InvestorDashboard(globalUsername, globalEmail);
+            InvestorDashboard ID = new InvestorDashboard(globalUsername, globalEmail, prior);
             ID.Show();
         }
     }

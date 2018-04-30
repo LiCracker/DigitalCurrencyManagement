@@ -28,11 +28,15 @@ namespace DCM_WPF
         private double deposit_volume = 0.0;
         private double withdraw_volume = 0.0;
 
-        public InvestorUSDManager(string username, string email)
+        Login prior;
+
+        public InvestorUSDManager(string username, string email, Login L)
         {
             InitializeComponent();
             globalUsername = username;
             globalEmail = email;
+
+            prior = L;
         }
 
         private void InvestorUSDManager_Load(object sender, EventArgs e)
@@ -210,7 +214,7 @@ namespace DCM_WPF
 
         private void InvestorUSDManager_FormClosing(object sender, FormClosingEventArgs e)
         {
-            InvestorDashboard ID = new InvestorDashboard(globalUsername, globalEmail);
+            InvestorDashboard ID = new InvestorDashboard(globalUsername, globalEmail, prior);
             ID.Show();
         }
 

@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace DCM_WPF
 {
-    public partial class InvestorRecentActivities : Form
+    public partial class AdminDashboard : Form
     {
         private BindingSource bindingSource1 = new BindingSource();
         private SqlDataAdapter dataAdapter1 = new SqlDataAdapter();
@@ -21,23 +21,21 @@ namespace DCM_WPF
         private BindingSource bindingSource2 = new BindingSource();
         private SqlDataAdapter dataAdapter2 = new SqlDataAdapter();
 
-        private string globalUsername;
-        private string globalEmail;
         private SqlConnectionStringBuilder cb;
 
-        Login prior;
+        AdminLogin prior;
 
-        public InvestorRecentActivities(string username, string email, Login L)
+        public AdminDashboard(AdminLogin AL)
         {
             InitializeComponent();
-            globalUsername = username;
-            globalEmail = email;
-
-            prior = L;
+            prior = AL;
         }
 
-        private void InvestorRecentActivities_Load(object sender, EventArgs e)
+        private void AdminDashboard_Load(object sender, EventArgs e)
         {
+            this.accountTableAdapter.Fill(this.dCMdbDataSet.Account);
+            this.investorTableAdapter.Fill(this.dCMdbDataSet.Investor);
+
             cb = new SqlConnectionStringBuilder();
             cb.DataSource = "dcm01.database.windows.net";
             cb.UserID = "serverAdmin";
@@ -45,14 +43,51 @@ namespace DCM_WPF
             cb.InitialCatalog = "DCMdb";
 
             dataGridView1.DataSource = bindingSource1;
-            string query1 = Query_get_recentBuySell(globalEmail);
+            string query1 = Query_get_recentBuySell();
             GetBuySellData(query1);
             dataGridView1.ClearSelection();
 
             dataGridView2.DataSource = bindingSource2;
-            string query2 = Query_get_recentDepositWithdraw(globalEmail);
+            string query2 = Query_get_recentDepositWithdraw();
             GetDepositWithdrawData(query2);
             dataGridView2.ClearSelection();
+
+            GetIncome();
+        }
+
+        private void GetIncome()
+        {
+            string getIncomeTxt = Query_get_income();
+            using (SqlConnection connection = new SqlConnection(cb.ConnectionString))
+            {
+                SqlCommand getAccountCommand = new SqlCommand(getIncomeTxt, connection);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = getAccountCommand.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        double income = Convert.ToDouble(reader[0]);
+                        label2.Text = "$ " + string.Format("{0:N2}", income);
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        static string Query_get_income()
+        {
+            return @"SELECT COUNT(*) * 3 FROM Transactions WHERE RecordType = 'buy'";
         }
 
         private void GetBuySellData(string selectCommand)
@@ -60,7 +95,7 @@ namespace DCM_WPF
             try
             {
                 String connectionString = cb.ConnectionString;
-                 
+
                 // Create a new data adapter based on the specified query.
                 dataAdapter1 = new SqlDataAdapter(selectCommand, connectionString);
 
@@ -79,9 +114,9 @@ namespace DCM_WPF
             }
         }
 
-        static string Query_get_recentBuySell(string globalEmail)
+        static string Query_get_recentBuySell()
         {
-            return "SELECT Currency, Volume, Price, Cost, RecordDateTime, RecordType FROM Transactions WHERE Email = '"+ globalEmail + "' AND RecordType IN ('buy', 'sell') ORDER BY RecordDateTime DESC";
+            return "SELECT Email, Currency, Volume, Price, Cost, RecordDateTime, RecordType FROM Transactions WHERE RecordType IN ('buy', 'sell') ORDER BY RecordDateTime DESC";
         }
 
         private void GetDepositWithdrawData(string selectCommand)
@@ -108,15 +143,14 @@ namespace DCM_WPF
             }
         }
 
-        static string Query_get_recentDepositWithdraw(string globalEmail)
+        static string Query_get_recentDepositWithdraw()
         {
-            return "SELECT Currency, Volume, Price, Cost, RecordDateTime, RecordType FROM Transactions WHERE Email = '" + globalEmail + "' AND RecordType IN ('deposit', 'withdraw') ORDER BY RecordDateTime DESC";
+            return "SELECT Email, Currency, Volume, Price, Cost, RecordDateTime, RecordType FROM Transactions WHERE RecordType IN ('deposit', 'withdraw') ORDER BY RecordDateTime DESC";
         }
 
-        private void InvestorRecentActivities_FormClosing(object sender, FormClosingEventArgs e)
+        private void AdminDashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
-            InvestorDashboard ID = new InvestorDashboard(globalUsername, globalEmail, prior);
-            ID.Show();
+            prior.Show();
         }
     }
 }
