@@ -21,6 +21,9 @@ namespace DCM_WPF
         private BindingSource bindingSource2 = new BindingSource();
         private SqlDataAdapter dataAdapter2 = new SqlDataAdapter();
 
+        private BindingSource bindingSource5 = new BindingSource();
+        private SqlDataAdapter dataAdapter5 = new SqlDataAdapter();
+
         private SqlConnectionStringBuilder cb;
 
         AdminLogin prior;
@@ -51,6 +54,11 @@ namespace DCM_WPF
             string query2 = Query_get_recentDepositWithdraw();
             GetDepositWithdrawData(query2);
             dataGridView2.ClearSelection();
+
+            dataGridView5.DataSource = bindingSource5;
+            string query5 = Query_get_recentTransfers();
+            GetRecentTransfers(query5);
+            dataGridView3.ClearSelection();
 
             GetIncome();
         }
@@ -146,6 +154,35 @@ namespace DCM_WPF
         static string Query_get_recentDepositWithdraw()
         {
             return "SELECT Email, Currency, Volume, Price, Cost, RecordDateTime, RecordType FROM Transactions WHERE RecordType IN ('deposit', 'withdraw') ORDER BY RecordDateTime DESC";
+        }
+
+        private void GetRecentTransfers(string selectCommand)
+        {
+            try
+            {
+                String connectionString = cb.ConnectionString;
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter5 = new SqlDataAdapter(selectCommand, connectionString);
+
+                // These are used to update the database.
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter5);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter5.Fill(table);
+                bindingSource5.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        static string Query_get_recentTransfers()
+        {
+            return "SELECT * FROM RecentTransferActivities ORDER BY RecordDatetime DESC";
         }
 
         private void AdminDashboard_FormClosing(object sender, FormClosingEventArgs e)

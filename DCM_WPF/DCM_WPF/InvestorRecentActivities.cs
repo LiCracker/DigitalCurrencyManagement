@@ -21,6 +21,9 @@ namespace DCM_WPF
         private BindingSource bindingSource2 = new BindingSource();
         private SqlDataAdapter dataAdapter2 = new SqlDataAdapter();
 
+        private BindingSource bindingSource3 = new BindingSource();
+        private SqlDataAdapter dataAdapter3 = new SqlDataAdapter();
+
         private string globalUsername;
         private string globalEmail;
         private SqlConnectionStringBuilder cb;
@@ -53,6 +56,11 @@ namespace DCM_WPF
             string query2 = Query_get_recentDepositWithdraw(globalEmail);
             GetDepositWithdrawData(query2);
             dataGridView2.ClearSelection();
+
+            dataGridView3.DataSource = bindingSource3;
+            string query3 = Query_get_recentTransfers(globalEmail);
+            GetRecentTransfers(query3);
+            dataGridView3.ClearSelection();
         }
 
         private void GetBuySellData(string selectCommand)
@@ -111,6 +119,35 @@ namespace DCM_WPF
         static string Query_get_recentDepositWithdraw(string globalEmail)
         {
             return "SELECT Currency, Volume, Price, Cost, RecordDateTime, RecordType FROM Transactions WHERE Email = '" + globalEmail + "' AND RecordType IN ('deposit', 'withdraw') ORDER BY RecordDateTime DESC";
+        }
+
+        private void GetRecentTransfers(string selectCommand)
+        {
+            try
+            {
+                String connectionString = cb.ConnectionString;
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter3 = new SqlDataAdapter(selectCommand, connectionString);
+
+                // These are used to update the database.
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter3);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter3.Fill(table);
+                bindingSource3.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        static string Query_get_recentTransfers(string globalEmail)
+        {
+            return "SELECT * FROM RecentTransferActivities WHERE Sender_Email = '" + globalEmail + "' OR Receiver_Email = '" + globalEmail + "' ORDER BY RecordDatetime DESC";
         }
 
         private void InvestorRecentActivities_FormClosing(object sender, FormClosingEventArgs e)
