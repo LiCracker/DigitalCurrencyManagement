@@ -71,16 +71,17 @@ namespace DCM_WPF
             {
                 SqlCommand checkLoginCommand = new SqlCommand(checkLoginTxt, connection);
                 checkLoginCommand.Parameters.AddWithValue("@Username", textBox1.Text);
-                checkLoginCommand.Parameters.AddWithValue("@Password", textBox2.Text);
 
-                string result = null;
+                string email = null;
+                string password = null;
                 try
                 {
                     connection.Open();
                     SqlDataReader reader = checkLoginCommand.ExecuteReader();
                     while (reader.Read())
                     {
-                        result = reader[0].ToString();
+                        email = reader[0].ToString();
+                        password = reader[1].ToString();
                     }
                     reader.Close();
                 }
@@ -91,7 +92,8 @@ namespace DCM_WPF
                 }
                 finally
                 {
-                    if (result == null)
+                    string decrypeted_password = Cryptography.Decrypt(password);
+                    if (!decrypeted_password.Equals(textBox2.Text))
                     {
                         MessageBox.Show("Login failed! Please check your username and password!", "Login Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -108,13 +110,20 @@ namespace DCM_WPF
 
         static string Query_checkLogin()
         {
-            return @"SELECT Email FROM Admin WHERE Username = @Username AND Password = @Password";
+            return @"SELECT Email, Password FROM Admin WHERE Username = @Username";
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             prior.Show();
             this.Close();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AdminSignup AS = new AdminSignup(this);
+            AS.Show();
+            this.Hide();
         }
     }
 }

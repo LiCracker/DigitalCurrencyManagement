@@ -17,6 +17,7 @@ namespace DCM_WPF
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+            //Application.Run(new Encrypt_text_generator());
         }
     }
 }

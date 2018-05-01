@@ -51,7 +51,7 @@ namespace DCM_WPF
                     SqlCommand investorSignupCommand = new SqlCommand(investorSignupTxt, connection);
                     investorSignupCommand.Parameters.AddWithValue("@Email", email);
                     investorSignupCommand.Parameters.AddWithValue("@Username", username);
-                    investorSignupCommand.Parameters.AddWithValue("@Password", password);
+                    investorSignupCommand.Parameters.AddWithValue("@Password", Cryptography.Encrypt(password));
                     investorSignupCommand.Parameters.AddWithValue("@LinkedBank", linked_bank);
                     investorSignupCommand.Parameters.AddWithValue("@LinkedAccount", bank_account_number);
 

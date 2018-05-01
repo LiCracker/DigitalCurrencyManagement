@@ -131,12 +131,12 @@
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Arial", 12F);
-            this.label10.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.label10.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.label10.Location = new System.Drawing.Point(603, 1);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(393, 40);
             this.label10.TabIndex = 2;
-            this.label10.Text = "Transfer Management";
+            this.label10.Text = "Transfer Currency";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox2
@@ -610,7 +610,8 @@
             // button_make_transfer
             // 
             this.button_make_transfer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_make_transfer.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button_make_transfer.Font = new System.Drawing.Font("Arial", 10F);
+            this.button_make_transfer.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.button_make_transfer.Location = new System.Drawing.Point(3, 212);
             this.button_make_transfer.Name = "button_make_transfer";
             this.button_make_transfer.Size = new System.Drawing.Size(988, 48);

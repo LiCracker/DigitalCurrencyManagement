@@ -62,10 +62,23 @@
     <Compile Include="AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminSignup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSignup.Designer.cs">
+      <DependentUpon>AdminSignup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cryptography.cs" />
     <Compile Include="DCMdbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DCMdbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Encrypt_text_generator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encrypt_text_generator.Designer.cs">
+      <DependentUpon>Encrypt_text_generator.cs</DependentUpon>
     </Compile>
     <Compile Include="InvestorAccountManagement.cs">
       <SubType>Form</SubType>
@@ -129,6 +142,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSignup.resx">
+      <DependentUpon>AdminSignup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Encrypt_text_generator.resx">
+      <DependentUpon>Encrypt_text_generator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InvestorAccountManagement.resx">
       <DependentUpon>InvestorAccountManagement.cs</DependentUpon>

@@ -72,8 +72,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -601,12 +601,12 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button4.Font = new System.Drawing.Font("Arial", 10F);
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(19, 591);
+            this.button4.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button4.Location = new System.Drawing.Point(5, 99);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(281, 68);
             this.button4.TabIndex = 10;
-            this.button4.Text = "View Recent Activity";
+            this.button4.Text = "View Recent Activities";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -625,48 +625,37 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 9F);
             this.groupBox3.Location = new System.Drawing.Point(13, 387);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(293, 186);
+            this.groupBox3.Size = new System.Drawing.Size(293, 253);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Buy/Sell Currency";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button7);
+            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.Font = new System.Drawing.Font("Arial", 9F);
             this.groupBox4.Location = new System.Drawing.Point(313, 387);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(584, 186);
+            this.groupBox4.Size = new System.Drawing.Size(584, 253);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Account Operation";
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button6.Font = new System.Drawing.Font("Arial", 10F);
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(319, 591);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(281, 68);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "Logout";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.groupBox4.Text = "Other Operations";
             // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button7.Font = new System.Drawing.Font("Arial", 10F);
-            this.button7.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.button7.Location = new System.Drawing.Point(6, 100);
+            this.button7.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.button7.Location = new System.Drawing.Point(6, 174);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(281, 68);
             this.button7.TabIndex = 12;
@@ -674,13 +663,24 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button6.Font = new System.Drawing.Font("Arial", 10F);
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(292, 174);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(281, 68);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "Logout";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // InvestorDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 671);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button6);
+            this.ClientSize = new System.Drawing.Size(908, 654);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label15);
