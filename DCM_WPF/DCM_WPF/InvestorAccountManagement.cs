@@ -77,8 +77,8 @@ namespace DCM_WPF
                 }
                 finally
                 {
-                    textBox_Password.Text = password;
-                    textBox_Password_Confirm.Text = password;
+                    textBox_Password.Text = Cryptography.Decrypt(password);
+                    textBox_Password_Confirm.Text = textBox_Password.Text;
                     textBox_Linked_Bank.Text = linkedBank;
                     textBox_Bank_Account_Number.Text = linkedAccount;
                     connection.Close();
@@ -189,7 +189,7 @@ namespace DCM_WPF
 
                     SqlCommand investorSignupCommand = new SqlCommand(investorUpdateTxt, connection);
                     investorSignupCommand.Parameters.AddWithValue("@Email", email);
-                    investorSignupCommand.Parameters.AddWithValue("@Password", password);
+                    investorSignupCommand.Parameters.AddWithValue("@Password", Cryptography.Encrypt(password));
                     investorSignupCommand.Parameters.AddWithValue("@LinkedBank", linked_bank);
                     investorSignupCommand.Parameters.AddWithValue("@LinkedAccount", bank_account_number);
 
