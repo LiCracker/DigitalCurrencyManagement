@@ -198,7 +198,15 @@ namespace DCM_WPF
 
         private async void timerRefreshPrices_Tick(object sender, EventArgs e)
         {
-            await refresh_prices();
+            try
+            {
+                await refresh_prices();
+            }
+            catch
+            {
+
+            }
+            
         }
 
         private void button_BTC_Click(object sender, EventArgs e)

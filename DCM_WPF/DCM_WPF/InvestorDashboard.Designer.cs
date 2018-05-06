@@ -71,8 +71,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -636,6 +636,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Buy/Sell Currency";
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button7.Font = new System.Drawing.Font("Arial", 10F);
+            this.button7.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.button7.Location = new System.Drawing.Point(6, 174);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(281, 68);
+            this.button7.TabIndex = 12;
+            this.button7.Text = "Make Transfer";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.button6);
@@ -649,19 +662,6 @@
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Other Operations";
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button7.Font = new System.Drawing.Font("Arial", 10F);
-            this.button7.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.button7.Location = new System.Drawing.Point(6, 174);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(281, 68);
-            this.button7.TabIndex = 12;
-            this.button7.Text = "Make Transfer";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
